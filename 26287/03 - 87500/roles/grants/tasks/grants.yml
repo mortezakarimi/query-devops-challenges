@@ -1,0 +1,12 @@
+---
+
+# NOTE: Do not put MySQL `login_*` fields in the task when submiting the
+# solution.
+- name: Add permission to mysql user
+  mysql_user:
+    name: "{{item.name}}"
+    password: "{{item.password}}"
+    host: "{{item.host}}"
+    priv: "{{item.grants | join('/')}}"
+    state: present
+  loop: "{{grants}}"

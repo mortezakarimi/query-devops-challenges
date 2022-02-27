@@ -1,0 +1,35 @@
+---
+grants:
+  - name: john
+    host: "%"
+    password: qazwsx
+    grants:
+      - "testdb5.*:SELECT,INSERT,UPDATE,DELETE,CREATE"
+      - "testdb4.*:SELECT,INSERT,UPDATE,DELETE"
+      - "testdb3.*:SELECT,INSERT"
+      - "testdb2.*:SELECT"
+
+  - name: foo
+    host: "%"
+    password: 1234
+    grants:
+      - "testdb2.*:SELECT"
+      - "testdb3.*:UPDATE"
+
+  - name: bar
+    host: "172.16.16.%"
+    password: 1111
+    grants:
+      - "testdb2.*:SELECT"
+      - "testdb1.*:DELETE"
+      - "testdb4.*:SELECT,INSERT,UPDATE,DELETE"
+      - "testdb3.*:SELECT,INSERT"
+
+  - name: sara
+    host: "localhost"
+    password: 2222
+    grants:
+      - "testdb5.*:SELECT,INSERT,UPDATE,DELETE,CREATE"
+      - "testdb3.*:SELECT,INSERT"
+      - "testdb2.*:SELECT"
+      - "testdb4.*:SELECT,INSERT,UPDATE,DELETE"
